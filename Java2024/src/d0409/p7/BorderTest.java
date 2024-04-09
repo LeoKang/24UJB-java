@@ -16,7 +16,7 @@ public class BorderTest {
 		east = new Button("button 3");
 		center = new Button("button 4");
 		tf1 = new TextField();
-		tf1.setText("�Է�â �Դϴ�.");
+		tf1.setText("입력창입니다. utf-8 세팅");
 	}
 
 	public void startFrame() {
