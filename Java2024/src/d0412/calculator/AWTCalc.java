@@ -13,7 +13,9 @@ public class AWTCalc implements ActionListener {
 	private Frame f;
 	private TextField tf;
 	private Panel p;
-	private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
+//	private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
+	private Button[] btnNum;
+
 	private Button bPlus, bMinus, bMul, bDiv, bRes;
 	private int operand = 0;
 
@@ -34,27 +36,37 @@ public class AWTCalc implements ActionListener {
 		p = new Panel();
 		p.setLayout(new GridLayout(4, 0));
 
-		b0 = new Button("0");
-		b1 = new Button("1");
-		b2 = new Button("2");
-		b3 = new Button("3");
-		b4 = new Button("4");
-		b5 = new Button("5");
-		b6 = new Button("6");
-		b7 = new Button("7");
-		b8 = new Button("8");
-		b9 = new Button("9");
+//		b0 = new Button("0");
+//		b1 = new Button("1");
+//		b2 = new Button("2");
+//		b3 = new Button("3");
+//		b4 = new Button("4");
+//		b5 = new Button("5");
+//		b6 = new Button("6");
+//		b7 = new Button("7");
+//		b8 = new Button("8");
+//		b9 = new Button("9");
 
-		b0.addActionListener(this);
-		b1.addActionListener(this);
-		b2.addActionListener(this);
-		b3.addActionListener(this);
-		b4.addActionListener(this);
-		b5.addActionListener(this);
-		b6.addActionListener(this);
-		b7.addActionListener(this);
-		b8.addActionListener(this);
-		b9.addActionListener(this);
+		btnNum = new Button[10];
+		for (int i = 0; i < btnNum.length; i++) {
+			String num = String.valueOf(i);
+			btnNum[i] = new Button(num);
+		}
+
+//		b0.addActionListener(this);
+//		b1.addActionListener(this);
+//		b2.addActionListener(this);
+//		b3.addActionListener(this);
+//		b4.addActionListener(this);
+//		b5.addActionListener(this);
+//		b6.addActionListener(this);
+//		b7.addActionListener(this);
+//		b8.addActionListener(this);
+//		b9.addActionListener(this);
+
+		for (int i = 0; i < btnNum.length; i++) {
+			btnNum[i].addActionListener(this);
+		}
 
 		bPlus = new Button("+");
 		bMinus = new Button("-");
@@ -68,16 +80,20 @@ public class AWTCalc implements ActionListener {
 		bDiv.addActionListener(this);
 		bRes.addActionListener(this);
 
-		p.add(b0);
-		p.add(b1);
-		p.add(b2);
-		p.add(b3);
-		p.add(b4);
-		p.add(b5);
-		p.add(b6);
-		p.add(b7);
-		p.add(b8);
-		p.add(b9);
+//		p.add(b0);
+//		p.add(b1);
+//		p.add(b2);
+//		p.add(b3);
+//		p.add(b4);
+//		p.add(b5);
+//		p.add(b6);
+//		p.add(b7);
+//		p.add(b8);
+//		p.add(b9);
+
+		for (int i = 0; i < btnNum.length; i++) {
+			p.add(btnNum[i]);
+		}
 
 		p.add(bPlus);
 		p.add(bMinus);
@@ -260,13 +276,13 @@ public class AWTCalc implements ActionListener {
 		}
 		if (e.getActionCommand().equals("=")) {
 			System.out.println("=");
-			
+
 			System.out.println(operand);
 			System.out.println(opOne);
 			System.out.println(tf.getText());
-			
+
 			int result = 0;
-			if(opOne == op.OP_PLUS) {
+			if (opOne == op.OP_PLUS) {
 				result = operand + Integer.parseInt(tf.getText());
 			}
 			tf.setText(String.valueOf(result));
