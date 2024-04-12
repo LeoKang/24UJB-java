@@ -109,6 +109,8 @@ public class AWTCalc implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("112 : " + e.getActionCommand());
+		
 		String tfText = tf.getText();
 
 		if (e.getActionCommand().equals("0")) {
@@ -121,141 +123,160 @@ public class AWTCalc implements ActionListener {
 				tf.setText(tfText);
 			}
 		}
-		if (e.getActionCommand().equals("1")) {
-			System.out.println("1");
 
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("1");
+		for (int i = 1; i < btnNum.length; i++) {
+			if (e.getActionCommand().equals(String.valueOf(i))) {
+				System.out.println(i);
+
+				if (op == OP.OP_NULL) {
+					if (tfText.equals("0") && (op == OP.OP_NULL)) {
+						tf.setText(String.valueOf(i));
+					} else {
+						tfText += String.valueOf(i);
+						tf.setText(tfText);
+					}
 				} else {
-					tfText += "1";
-					tf.setText(tfText);
+					tf.setText(String.valueOf(i));
+					op = OP.OP_NULL;
 				}
-			} else {
-				tf.setText("1");
-				op = OP.OP_NULL;
 			}
 		}
-		if (e.getActionCommand().equals("2")) {
-			System.out.println("2");
 
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("2");
-				} else {
-					tfText += "2";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("2");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("3")) {
-			System.out.println("3");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("3");
-				} else {
-					tfText += "3";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("3");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("4")) {
-			System.out.println("4");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("4");
-				} else {
-					tfText += "4";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("4");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("5")) {
-			System.out.println("5");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("5");
-				} else {
-					tfText += "5";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("5");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("6")) {
-			System.out.println("6");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("6");
-				} else {
-					tfText += "6";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("6");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("7")) {
-			System.out.println("7");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("7");
-				} else {
-					tfText += "7";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("7");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("8")) {
-			System.out.println("8");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("8");
-				} else {
-					tfText += "8";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("8");
-				op = OP.OP_NULL;
-			}
-		}
-		if (e.getActionCommand().equals("9")) {
-			System.out.println("9");
-
-			if (op == OP.OP_NULL) {
-				if (tfText.equals("0") && (op == OP.OP_NULL)) {
-					tf.setText("9");
-				} else {
-					tfText += "9";
-					tf.setText(tfText);
-				}
-			} else {
-				tf.setText("9");
-				op = OP.OP_NULL;
-			}
-		}
+//		if (e.getActionCommand().equals("1")) {
+//			System.out.println("1");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("1");
+//				} else {
+//					tfText += "1";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("1");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("2")) {
+//			System.out.println("2");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("2");
+//				} else {
+//					tfText += "2";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("2");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("3")) {
+//			System.out.println("3");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("3");
+//				} else {
+//					tfText += "3";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("3");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("4")) {
+//			System.out.println("4");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("4");
+//				} else {
+//					tfText += "4";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("4");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("5")) {
+//			System.out.println("5");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("5");
+//				} else {
+//					tfText += "5";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("5");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("6")) {
+//			System.out.println("6");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("6");
+//				} else {
+//					tfText += "6";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("6");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("7")) {
+//			System.out.println("7");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("7");
+//				} else {
+//					tfText += "7";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("7");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("8")) {
+//			System.out.println("8");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("8");
+//				} else {
+//					tfText += "8";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("8");
+//				op = OP.OP_NULL;
+//			}
+//		}
+//		if (e.getActionCommand().equals("9")) {
+//			System.out.println("9");
+//
+//			if (op == OP.OP_NULL) {
+//				if (tfText.equals("0") && (op == OP.OP_NULL)) {
+//					tf.setText("9");
+//				} else {
+//					tfText += "9";
+//					tf.setText(tfText);
+//				}
+//			} else {
+//				tf.setText("9");
+//				op = OP.OP_NULL;
+//			}
+//		}
 
 		if (e.getActionCommand().equals("+")) {
 			System.out.println("+");
