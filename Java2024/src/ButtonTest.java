@@ -1,26 +1,18 @@
-import java.awt.Button;
-import java.awt.Frame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class ButtonTest {
-    public static void main(String[] args) {
-        Frame f = new Frame("Login");
-        f.setSize(300, 200);
-        f.setLayout(null);
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
-        Button b = new Button("»Æ¿Œ");
-        b.setSize(100, 50);
-        b.setLocation(100, 75);
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
 
-        b.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                f.setTitle("ø¿≈∫");
-            }
-        });
+		int result = n3(n1, n2);
+		System.out.println(result);
+		sc.close();
+	}
 
-        f.add(b);
-        f.setVisible(true);
-    }
+	public static int n3(int n1, int n2) {
+		return (int) Math.pow(n1, n2);
+	}
 }

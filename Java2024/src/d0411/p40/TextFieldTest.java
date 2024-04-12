@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 public class TextFieldTest {
 	private Frame f;
-	private TextField tfMsg;
+//	private TextField tfMsg;
 	private Button b;
 	private String LOGIN_ID = "green";
 	private String LOGIN_PWD = "ujb1234";
@@ -26,7 +26,9 @@ public class TextFieldTest {
 		TextField id = new TextField(10);
 		TextField pwd = new TextField(10);
 		pwd.setEchoChar('*');
-
+	
+		TextField tfMsg = new TextField(50);
+		
 		b = new Button("Login");
 		b.addActionListener(new ActionListener() {
 			@Override
@@ -42,8 +44,6 @@ public class TextFieldTest {
 				}
 			}
 		});
-
-		tfMsg = new TextField(50);
 
 		f.add(lid);
 		f.add(id);
